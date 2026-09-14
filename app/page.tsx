@@ -10,7 +10,7 @@ import { Footer } from '@/components/portfolio/footer'
 
 export default function Page() {
   return (
-    <div className="grain-overlay relative min-h-svh">
+    <div className="grain-overlay relative min-h-svh bg-[#171717]">
       <Navbar />
       <main>
         <Hero />

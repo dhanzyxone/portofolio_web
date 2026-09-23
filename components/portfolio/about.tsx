@@ -20,7 +20,7 @@ export function About() {
             <Reveal>
               <div className="relative overflow-hidden rounded-2xl border border-border/60">
                 <img
-                  src="/moments/portrait-abstract.png"
+                  src="/activities/foto1.jpeg"
                   alt="Potret abstrak Dhaffa Harfansyah yang menyatu dengan partikel digital"
                   className="aspect-4/5 w-full object-cover"
                 />

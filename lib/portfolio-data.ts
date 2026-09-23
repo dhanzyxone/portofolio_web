@@ -15,6 +15,7 @@ export const NAV_LINKS = [
   { label: 'Tentang', href: '#about' },
   { label: 'Skill', href: '#skills' },
   { label: 'Project', href: '#projects' },
+  { label: 'Kegiatan', href: '#kegiatan' },
   { label: 'Lab', href: '#lab' },
   { label: 'Kontak', href: '#contact' },
 ]
@@ -240,12 +241,12 @@ export const LAB_ITEMS: LabItem[] = [
   },
 ]
 
-export const MOMENTS = [
-  { src: '/moments/coding.png', label: 'Coding', alt: 'Suasana ruang kerja coding di malam hari' },
-  { src: '/moments/conference.png', label: 'Conference', alt: 'Suasana panggung konferensi teknologi' },
-  { src: '/moments/teamwork.png', label: 'Team Work', alt: 'Kolaborasi tim di sekitar meja kerja' },
-  { src: '/moments/achievement.png', label: 'Achievement', alt: 'Trofi penghargaan dengan pencahayaan dramatis' },
-  { src: '/moments/daily.png', label: 'Daily Life', alt: 'Suasana kota saat senja' },
+export const ACTIVITIES = [
+  { src: '/activities/coding.png', label: 'Coding Workshop', date: 'Januari 2024', category: 'Workshop', description: 'Smart Acces Door Politeknik Negeri Padanbg.' },
+  { src: '/activities/conference.png', label: 'Conference', date: 'Februari 2024', category: 'Event', description: 'Berpartisipasi sebagai speaker di konferensi teknologi tentang AI dan inovasi.' },
+  { src: '/activities/teamwork.png', label: 'Team Collaboration', date: 'Maret 2024', category: 'Project', description: 'Kolaborasi tim dalam mengembangkan proyek berbasis AI untuk akademik.' },
+  { src: '/activities/achievement.png', label: 'Achievement', date: 'April 2024', category: 'Award', description: 'Meraih penghargaan atas kontribusi dalam penelitian UMKM berkelanjutan.' },
+  { src: '/activities/daily.png', label: 'Daily Life', date: 'Mei 2024', category: 'Personal', description: 'Momen sehari-hari di kota Padang, menggabungkan kerja dan gaya hidup.' },
 ]
 
 export const CONTACTS = [

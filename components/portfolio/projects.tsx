@@ -59,17 +59,26 @@ export function Projects() {
                 onClick={() => setSelected(project)}
                 className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-7 text-left transition-colors hover:border-accent-cyan/40 hover:bg-card/70 md:p-8"
               >
-                <div
-                  className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-accent-cyan/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-accent-cyan/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
                   aria-hidden="true"
                 />
+                {project.image && (
+                  <div className="relative h-40 overflow-hidden rounded-xl mb-4">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent-cyan">
                     {project.categoryLabel}
                   </span>
                   <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-cyan" />
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight">
+                <h3 className="mt-2 text-2xl font-semibold leading-tight tracking-tight">
                   {project.title}
                 </h3>
                 <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">

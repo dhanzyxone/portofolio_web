@@ -23,7 +23,7 @@ function getReply(q: string): string {
     return `Halo! Saya asisten virtual ${PROFILE.name}. Tanya soal tentang, skill, project, lab, atau kontak.`
 
   if (/(siapa|tentang|about|profil|profile|nama|dhaffa)/.test(s))
-    return `${PROFILE.name} — ${PROFILE.role} (${PROFILE.roleLine}). ${PROFILE.subheadline} Lokasi: ${PROFILE.location}. Status: ${PROFILE.availability}.`
+    return `${PROFILE.name} — ${PROFILE.role} (${PROFILE.roleLine}). ${PROFILE.subheadline} Lokasi: ${PROFILE.location}.`
 
   if (/(skill|kemampuan|bisa apa|tech|stack|python|javascript|tools)/.test(s)) {
     const all = SKILL_GROUPS.map((g) => `${g.category}: ${g.items.map((i) => i.name).join(', ')}`).join(' | ')
@@ -54,7 +54,7 @@ function getReply(q: string): string {
   if (/(kontak|contact|hubungi|email|wa|whatsapp|instagram|ig|linkedin|github|nomor|hire|kolaborasi|kerjasama)/.test(s))
     return `Kontak: ${CONTACTS.map((c) => `${c.label}: ${c.value}`).join(' | ')}. Paling cepat via WhatsApp / Email.`
 
-  if (/(lokasi|dimana|tinggal|padang|domisili)/.test(s)) return `Dhaffa berdomisili di ${PROFILE.location}. ${PROFILE.availability}.`
+  if (/(lokasi|dimana|tinggal|padang|domisili)/.test(s)) return `Dhaffa berdomisili di ${PROFILE.location}.`
 
   if (/(cv|resume|download)/.test(s))
     return 'CV belum tersedia untuk diunduh di web ini. Hubungi langsung via Email / WhatsApp untuk minta CV.'

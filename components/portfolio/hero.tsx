@@ -97,59 +97,22 @@ export function Hero() {
             className="flex justify-center lg:col-span-5 lg:justify-end"
           >
             <div className="group relative w-full max-w-xs sm:max-w-sm">
-              {/* Ambient Glow */}
-              <div
-                aria-hidden="true"
-                className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-accent-cyan/20 via-sky-500/10 to-transparent blur-2xl transition-opacity duration-700 group-hover:opacity-100"
-              />
-
-              {/* Glassmorphic Frame */}
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-card/40 p-2.5 backdrop-blur-md shadow-2xl transition-all duration-500 hover:border-accent-cyan/40 hover:shadow-accent-cyan/5">
-                {/* Image Container */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-neutral-900">
+              <div className="relative mx-auto mt-6 w-40 h-40">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-cyan/30 via-sky-400/20 to-transparent blur-xl animate-pulse" />
+                <div className="relative rounded-full overflow-hidden border-[3px] border-accent-cyan/40 bg-neutral-900 shadow-lg shadow-accent-cyan/10">
                   <img
                     src="/image/iuyn_.png"
                     alt="Dhaffa Harfansyah"
-                    className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover object-top"
                     loading="eager"
                   />
-
-                  {/* Gradient Overlay for Text Readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
-
-                  {/* Live Status Badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-2 rounded-full border border-white/15 bg-background/80 px-3 py-1.5 backdrop-blur-md shadow-lg">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                    </span>
-                    <span className="font-mono text-[11px] font-medium uppercase tracking-wider text-foreground">
-                      {PROFILE.availability}
-                    </span>
-                  </div>
-
-                  {/* Bottom Information Bar */}
-                  <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-end justify-between">
-                    <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-cyan">
-                        {PROFILE.location}
-                      </p>
-                      <p className="text-sm font-semibold text-white">Dhaffa Harfansyah</p>
-                    </div>
-                    <div className="rounded-full border border-white/10 bg-white/10 px-2.5 py-0.5 font-mono text-[10px] text-muted-foreground backdrop-blur-sm">
-                      Creative Tech
-                    </div>
-                  </div>
                 </div>
-
-                {/* Tech Aesthetic Corner Accent */}
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute top-2 right-2.5 font-mono text-[10px] text-white/30"
-                >
-                  +
-                </span>
+                <div className="absolute -inset-[5px] overflow-hidden rounded-full"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 0deg, accent-cyan 60deg, transparent 120deg, accent-cyan 180deg, transparent 240deg, accent-cyan 300deg, transparent 360deg)',
+                    animation: 'rotate-glow 3s linear infinite',
+                  }}
+                />
               </div>
             </div>
           </motion.div>

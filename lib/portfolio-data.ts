@@ -115,6 +115,7 @@ export type Project = {
   categoryLabel: string
   summary: string
   tags: string[]
+  image: string
   demoUrl?: string
   githubUrl?: string
   detail: {
@@ -128,55 +129,152 @@ export type Project = {
 }
 
 export const PROJECTS: Project[] = [
-  {
-    id: 'hand-gesture-detection',
-    title: 'Hand Gesture Detection',
-    categories: ['AI'],
-    categoryLabel: 'AI · Computer Vision',
+   {
+    id: 'rosa-ai',
+    title: 'ROSA AI',
+    categories: ['AI', 'IOT', 'CODE'],
+    categoryLabel: 'AI · IoT · Automation',
+    image: '/image/rosa-ai.png',
     summary:
-      'Project Python menggunakan OpenCV dan MediaPipe untuk mendeteksi gerakan tangan secara real-time.',
-    tags: ['#Python', '#OpenCV'],
+      'Sistem berbasis AI, IoT, software, dan hardware untuk membantu memantau dan mengendalikan lingkungan fisik secara cerdas.',
+
+    tags: ['#AI', '#IoT', '#Automation'],
+
     detail: {
       overview:
-        'Sistem deteksi gerakan tangan real-time yang membaca input kamera dan mengenali posisi serta gestur tangan menggunakan pipeline computer vision.',
+        'ROSA AI merupakan solusi yang menghubungkan kecerdasan buatan dengan perangkat fisik untuk melakukan monitoring, analisis, dan kontrol terhadap lingkungan secara real-time.',
+
       problem:
-        'Interaksi manusia-komputer sering terbatas pada keyboard dan mouse. Dibutuhkan cara mengeksplorasi input berbasis gestur yang lebih natural dan tanpa sentuhan.',
+        'Sistem monitoring dan kontrol konvensional sering berjalan secara terpisah. Dibutuhkan sistem yang dapat menghubungkan data, kecerdasan, dan perangkat fisik dalam satu alur.',
+
       concept:
-        'Menggunakan pelacakan landmark tangan untuk memetakan titik-titik sendi jari, lalu menerjemahkan pola posisi tersebut menjadi gestur yang dapat dikenali.',
+        'Menggabungkan AI, IoT, software, dan hardware sehingga informasi dari lingkungan dapat dipantau, dianalisis, dan diterjemahkan menjadi tindakan pada perangkat.',
+
       process:
-        'Membangun alur capture kamera dengan OpenCV, mengintegrasikan MediaPipe untuk deteksi 21 landmark tangan, lalu menguji akurasi pengenalan pada kondisi pencahayaan berbeda.',
-      technology: 'Python, OpenCV, MediaPipe.',
+        'Mengembangkan konsep produk, mengeksplorasi use case, membuat prototype dan visualisasi, serta mengembangkan komunikasi produk melalui video, visual, dan demonstrasi teknologi.',
+
+      technology:
+        'Artificial Intelligence, IoT, Software, Hardware, Automation.',
+
       result:
-        'Prototipe berfungsi mendeteksi tangan dan landmark secara real-time, menjadi fondasi untuk eksperimen interaksi berbasis gestur berikutnya.',
+        'Menghasilkan konsep dan prototype solusi AIoT yang dapat digunakan untuk berbagai kebutuhan seperti monitoring mesin, safety detection, access control, process control, dan energy management.',
     },
   },
+{
+  id: 'kyos-photobooth',
+  title: "Kyos Photobooth",
+  categories: ['CREATIVE', 'EVENT'],
+  categoryLabel: 'Creative · Event · Experience',
+  image: '/image/kyos.png',
+  summary:
+    'Mobile street photobooth yang hadir dan berpindah dari satu event ke event lainnya.',
+
+  tags: ['#Photobooth', '#Event', '#Creative', '#Experience'],
+
+  detail: {
+    overview:
+      "Kyo's Photobooth merupakan konsep mobile street photobooth yang hadir di berbagai event dan berpindah dari satu lokasi ke lokasi lainnya.",
+
+    problem:
+      'Setiap event memiliki karakter, suasana, dan pengunjung yang berbeda. Dibutuhkan konsep photobooth yang fleksibel dan dapat beradaptasi dengan berbagai lokasi serta jenis event.',
+
+    concept:
+      'Membangun pengalaman photobooth mobile yang dapat dibawa ke berbagai event dengan identitas visual yang konsisten dan pengalaman foto yang menarik bagi pengunjung.',
+
+    process:
+      'Menyiapkan konsep visual, setup photobooth di lokasi, mengatur pengalaman pengunjung, serta menyesuaikan operasional dengan karakter setiap event.',
+
+    technology:
+      'Photobooth System, Photography, Visual Design, Event Experience.',
+
+    result:
+      'Menghadirkan pengalaman photobooth yang fleksibel dan mobile di berbagai event dengan konsep yang dapat beradaptasi pada setiap lokasi.',
+  },
+},
+  
   {
-    id: 'llm-layanan-akademik',
-    title: 'LLM untuk Layanan Akademik',
-    categories: ['AI', 'CODE'],
-    categoryLabel: 'AI · NLP',
+    id: 'sbsn-pnp',
+
+    title: 'SBSN PNP',
+
+    categories: ['CODE'],
+
+    categoryLabel: 'Web · Campus System',
+
+    image: '/image/SBSN WEB.png',
+
     summary:
-      'Pengembangan sistem AI berbasis Large Language Model untuk layanan akademik di Politeknik Negeri Padang.',
-    tags: ['#LLM', '#Python'],
+
+      'Website peminjaman ruangan Gedung SBSN Politeknik Negeri Padang untuk mahasiswa dan dosen.',
+
+    tags: ['#WebDevelopment', '#RoomBooking'],
+
     detail: {
+
       overview:
-        'Pengembangan sistem berbasis Large Language Model yang ditujukan untuk membantu layanan akademik di lingkungan Politeknik Negeri Padang.',
+
+        'Sistem berbasis web yang membantu mahasiswa dan dosen melakukan peminjaman ruangan di Gedung SBSN Politeknik Negeri Padang, mulai dari lantai satu hingga lantai empat.',
+
       problem:
-        'Layanan akademik menerima banyak pertanyaan berulang dari mahasiswa. Proses manual memakan waktu dan kurang responsif.',
+
+        'Proses peminjaman ruangan membutuhkan pengelolaan jadwal dan informasi ketersediaan ruang yang terstruktur agar penggunaan ruangan oleh mahasiswa dan dosen dapat dikelola dengan lebih mudah.',
+
       concept:
-        'Memanfaatkan kemampuan pemahaman bahasa alami dari LLM untuk menjawab pertanyaan seputar layanan akademik secara kontekstual.',
+
+        'Membangun website peminjaman ruangan yang memungkinkan pengguna melihat ruangan berdasarkan lantai, mengetahui informasi penggunaan ruangan, dan mengajukan peminjaman sesuai kebutuhan.',
+
       process:
-        'Mengumpulkan kebutuhan informasi akademik, menyiapkan alur interaksi berbasis bahasa, dan mengeksplorasi integrasi model bahasa dengan konteks data kampus.',
-      technology: 'Python, Large Language Models (LLM), Natural Language Processing.',
+
+        'Merancang struktur informasi gedung dan ruangan, membuat alur peminjaman, mengembangkan antarmuka website, serta mengatur data ruangan dan jadwal peminjaman.',
+
+      technology: 'Web Development, Database, User Interface.',
+
       result:
-        'Sistem dalam tahap pengembangan sebagai eksplorasi penerapan AI generatif pada konteks layanan akademik nyata.',
+
+        'Menghasilkan sistem peminjaman ruangan berbasis web yang membantu mahasiswa dan dosen mengelola penggunaan ruangan Gedung SBSN secara lebih terstruktur.',
+
     },
+
   },
-  {
+
+{
+id: 'smart-access-door-pnp',
+title: 'Smart Access Door PNP',
+categories: ['PROJECT', 'CREATIVE'],
+categoryLabel: 'Project · Documentation',
+image: '/image/smart acces door.png',
+summary:
+    'Terlibat dalam dokumentasi, pelaporan, publikasi, dan pengelolaan administrasi proyek Smart Access Door di Politeknik Negeri Padang.',
+tags: ['#Documentation', '#Publication', '#ProjectManagement'],
+
+  detail: {
+
+    overview:
+      'Smart Access Door PNP merupakan proyek pengembangan sistem akses pintu berbasis teknologi di lingkungan Politeknik Negeri Padang.',
+
+    problem:
+      'Proyek membutuhkan dokumentasi, pelaporan, publikasi, serta pengelolaan administrasi dan perizinan agar proses pengembangan dan implementasi dapat terdokumentasi dengan baik.',
+
+    concept:
+      'Mendukung jalannya proyek dari sisi non-teknis melalui pengelolaan dokumentasi, penyusunan laporan, publikasi kegiatan, serta koordinasi kebutuhan administrasi dan perizinan.',
+
+    process:
+      'Mendokumentasikan proses dan kegiatan proyek, menyusun serta mengelola laporan, menyiapkan materi publikasi, dan membantu proses administrasi serta perizinan yang diperlukan selama proyek berlangsung.',
+
+    technology:
+      'Digital Documentation, Content Creation, Reporting, Project Administration.',
+
+    result:
+      'Mendukung dokumentasi dan komunikasi proyek sehingga perkembangan, kegiatan, dan hasil Smart Access Door PNP dapat terdokumentasi serta dikomunikasikan dengan baik.',
+
+  },
+  },
+   {
     id: 'riset-umkm-berkelanjutan',
     title: 'Riset UMKM Berkelanjutan',
-    categories: ['CREATIVE'],
+    categories: ['RESEARCH'],
     categoryLabel: 'Research · Business',
+    image: '/image/riset umkm.jpg',
     summary:
       'Penelitian strategi pengembangan UMKM di era digital, untuk jurusan Administrasi Niaga.',
     tags: ['#Research', '#UMKM'],
@@ -241,12 +339,19 @@ export const LAB_ITEMS: LabItem[] = [
   },
 ]
 
-export const ACTIVITIES = [
-  { src: '/activities/coding.png', label: 'Coding Workshop', date: 'Januari 2024', category: 'Workshop', description: 'Smart Acces Door Politeknik Negeri Padanbg.' },
-  { src: '/activities/conference.png', label: 'Conference', date: 'Februari 2024', category: 'Event', description: 'Berpartisipasi sebagai speaker di konferensi teknologi tentang AI dan inovasi.' },
-  { src: '/activities/teamwork.png', label: 'Team Collaboration', date: 'Maret 2024', category: 'Project', description: 'Kolaborasi tim dalam mengembangkan proyek berbasis AI untuk akademik.' },
-  { src: '/activities/achievement.png', label: 'Achievement', date: 'April 2024', category: 'Award', description: 'Meraih penghargaan atas kontribusi dalam penelitian UMKM berkelanjutan.' },
-  { src: '/activities/daily.png', label: 'Daily Life', date: 'Mei 2024', category: 'Personal', description: 'Momen sehari-hari di kota Padang, menggabungkan kerja dan gaya hidup.' },
+export type Experience = {
+  logo: string
+  name: string
+  role: string
+  description: string
+  period: string
+}
+
+export const EXPERIENCE: Experience[] = [
+  { logo: '/image/HAlcom logo.jpeg', name: 'PT HALCOM Inovasi Teknologi', role: 'AI Solutions', description: 'Mengembangkan product AI dan memasarkannya menjadi product nyata dan dikenal semua orang.', period: 'Januari - Juni 2024' },
+  { logo: '/image/hydtech logo.png', name: ' CV Hydtech Inovasi Digital', role: 'AI Solutions', description: 'Berkontribusi dalam pengembangan solusi teknologi berbasis IoT dan software.', period: 'Juli - Desember 2024' },
+  { logo: '/image/dangau.jpeg', name: 'Dangau Studio', role: 'IT and Media Creative', description: 'Membantu tim produk dalam riset pasar dan pengembangan fitur produk digital.', period: 'Januari - Maret 2025' },
+  { logo: '/image/hipmi pt sumbar.jpg', name: ' Bakorda HIPMI PT Sumbar', role: 'External Compartement', description: 'Memimpin divisi digital dalam organisasi kewirausahaan mahasiswa.', period: '2024 - Sekarang' },
 ]
 
 export const CONTACTS = [

@@ -17,7 +17,6 @@ export function Lab() {
     <section id="lab" className="scroll-mt-20 border-t border-border/60 bg-card/20">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeading
-          index="04"
           title="The Lab"
           subtitle="Ruang bermain untuk ide yang sedang diuji — eksperimen, prototipe, dan hal-hal yang belum selesai."
         />
@@ -25,7 +24,7 @@ export function Lab() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {LAB_ITEMS.map((item, i) => (
             <Reveal key={item.id} delay={i * 0.06}>
-              <div className="group flex h-full flex-col rounded-2xl border border-dashed border-border/70 bg-background/40 p-6 transition-colors hover:border-accent-cyan/40 md:p-7">
+              <div className="group flex h-full flex-col rounded-2xl border border-dashed border-border/70 bg-background/40 p-4 sm:p-6 md:p-7 transition-colors hover:border-accent-cyan/40">
                 <div className="flex items-center justify-between">
                   <span
                     className={cn(
@@ -35,12 +34,12 @@ export function Lab() {
                   >
                     {item.status}
                   </span>
-                  <span className="font-mono text-xs text-muted-foreground/60">
+                  <span className="font-mono text-[11px] sm:text-xs text-muted-foreground/60">
                     /lab/{item.id}
                   </span>
                 </div>
-                <h3 className="mt-5 text-xl font-medium leading-tight">{item.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="mt-3 sm:mt-5 text-base sm:text-lg md:text-xl font-medium leading-tight">{item.title}</h3>
+                <p className="mt-2 flex-1 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">

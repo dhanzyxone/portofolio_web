@@ -15,6 +15,9 @@ const ABOUT_IMAGES = [
   { src: '/activities/mesin.jpeg', alt: 'Coding' },
 ]
 
+// Set to true jika ingin menampilkan kembali foto di section About
+const SHOW_PHOTO = false
+
 export function About() {
   const [current, setCurrent] = useState(0)
 
@@ -25,74 +28,75 @@ export function About() {
     <section id="about" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeading
-          index="01"
           title="About"
           subtitle="Mahasiswa Digital Business yang percaya bahwa teknologi terbaik lahir dari perpaduan logika dan kreativitas."
         />
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <div className="relative overflow-hidden rounded-2xl border border-border/60">
-              <div className="aspect-[4/5] relative">
-                {ABOUT_IMAGES.map((img, i) => (
-                  <motion.div
-                    key={img.src}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: i === current ? 1 : 0, x: i === current ? 0 : i < current ? -100 : 100 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="h-full w-full object-cover"
+        <div className={SHOW_PHOTO ? "grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16" : "max-w-3xl"}>
+          {SHOW_PHOTO && (
+            <div className="flex justify-center lg:col-span-4 lg:justify-start">
+              <div className="relative w-full max-w-[280px] sm:max-w-xs overflow-hidden rounded-2xl border border-border/60 shadow-lg">
+                <div className="aspect-[4/5] relative">
+                  {ABOUT_IMAGES.map((img, i) => (
+                    <motion.div
+                      key={img.src}
+                      className="absolute inset-0"
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: i === current ? 1 : 0, x: i === current ? 0 : i < current ? -100 : 100 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="h-full w-full object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-5 left-5">
+                    <p className="font-mono text-xs uppercase tracking-widest text-accent-cyan">
+                      {PROFILE.location}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={prev}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 backdrop-blur-sm transition-colors hover:bg-background"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={next}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 backdrop-blur-sm transition-colors hover:bg-background"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                  {ABOUT_IMAGES.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setCurrent(i)}
+                      className={cn(
+                        'h-1.5 rounded-full transition-all',
+                        i === current ? 'w-6 bg-accent-cyan' : 'w-1.5 bg-muted-foreground/30'
+                      )}
+                      aria-label={`Go to slide ${i + 1}`}
                     />
-                  </motion.div>
-                ))}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-5">
-                  <p className="font-mono text-xs uppercase tracking-widest text-accent-cyan">
-                    {PROFILE.location}
-                  </p>
+                  ))}
                 </div>
               </div>
-
-              <button
-                type="button"
-                onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 backdrop-blur-sm transition-colors hover:bg-background"
-                aria-label="Previous"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 backdrop-blur-sm transition-colors hover:bg-background"
-                aria-label="Next"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {ABOUT_IMAGES.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setCurrent(i)}
-                    className={cn(
-                      'h-1.5 rounded-full transition-all',
-                      i === current ? 'w-6 bg-accent-cyan' : 'w-1.5 bg-muted-foreground/30'
-                    )}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
-              </div>
             </div>
-          </div>
+          )}
 
-          <div className="lg:col-span-7">
-            <div className="space-y-5 text-lg leading-relaxed text-foreground/90">
+          <div className={SHOW_PHOTO ? "lg:col-span-8" : ""}>
+            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base leading-relaxed text-foreground/90">
               <Reveal>
                 <p>
                   Saya <span className="text-accent-cyan">Dhaffa Harfansyah</span>, seorang
@@ -115,16 +119,16 @@ export function About() {
               </Reveal>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <Reveal>
-                <p className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                <p className="mb-4 sm:mb-6 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                   The Journey
                 </p>
               </Reveal>
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-3 sm:gap-y-4">
                 {TIMELINE.map((step, i) => (
                   <Reveal key={step} delay={i * 0.06} as="span" className="inline-flex items-center gap-2">
-                    <span className="rounded-full border border-border bg-card/60 px-4 py-2 text-sm">
+                    <span className="rounded-full border border-border bg-card/60 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm">
                       {step}
                     </span>
                     {i < TIMELINE.length - 1 && (

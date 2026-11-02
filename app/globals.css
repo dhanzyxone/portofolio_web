@@ -12,6 +12,29 @@
   50% { opacity: 1; }
 }
 
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-orbit {
+  animation: orbit-spin 28s linear infinite;
+}
+
+.animate-counter-orbit {
+  animation: counter-orbit 28s linear infinite;
+}
+
+.pause-orbit:hover,
+.pause-orbit:has(:hover) {
+  animation-play-state: paused;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

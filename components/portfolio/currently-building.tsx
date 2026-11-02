@@ -22,15 +22,15 @@ export function CurrentlyBuilding() {
         <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 sm:grid-cols-2 lg:grid-cols-4">
           {CURRENTLY_BUILDING.map((entry, i) => (
             <Reveal key={entry.title} delay={i * 0.08}>
-              <div className="group h-full bg-background p-6 transition-colors hover:bg-card/60">
+              <div className="group h-full bg-background p-4 sm:p-6 transition-colors hover:bg-card/60">
                 <div className="flex items-center gap-2">
                   <span className={cn('text-xs', statusColor[entry.status])}>●</span>
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                  <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground">
                     {entry.status}
                   </span>
                 </div>
-                <h3 className="mt-6 text-lg font-medium leading-tight">{entry.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="mt-3 sm:mt-5 text-base sm:text-lg font-medium leading-tight">{entry.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                   {entry.description}
                 </p>
               </div>

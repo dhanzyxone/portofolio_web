@@ -83,7 +83,7 @@ export function Navbar() {
             className="border-t border-border/60 bg-background/95 backdrop-blur-xl md:hidden"
           >
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-6 sm:px-8">
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -91,9 +91,6 @@ export function Navbar() {
                     className="flex items-center justify-between border-b border-border/40 py-4 text-lg text-foreground"
                   >
                     <span>{link.label}</span>
-                    <span className="font-mono text-xs text-muted-foreground">
-                      0{i + 1}
-                    </span>
                   </a>
                 </li>
               ))}

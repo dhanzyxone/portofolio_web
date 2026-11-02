@@ -9,7 +9,6 @@ export function Skills() {
     <section id="skills" className="scroll-mt-20 border-t border-border/60 bg-card/20">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeading
-          index="02"
           title="Skills"
           subtitle="Perangkat yang saya gunakan untuk berpikir, membangun, dan bercerita — terus berkembang seiring waktu."
         />
@@ -17,16 +16,15 @@ export function Skills() {
         <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 md:grid-cols-2">
           {SKILL_GROUPS.map((group, i) => (
             <Reveal key={group.category} delay={i * 0.06}>
-              <div className="h-full bg-background p-7 md:p-8">
+              <div className="h-full bg-background p-5 sm:p-7 md:p-8">
                 <div className="flex items-baseline justify-between">
-                  <h3 className="text-xl font-medium">{group.category}</h3>
-                  <span className="font-mono text-xs text-muted-foreground">{group.index}</span>
+                  <h3 className="text-base sm:text-lg md:text-xl font-medium">{group.category}</h3>
                 </div>
-                <ul className="mt-6 flex flex-wrap gap-2.5">
+                <ul className="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-2.5">
                   {group.items.map((skill) => (
                     <li
                       key={skill.name}
-                      className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3.5 py-1.5 text-sm text-foreground/90 transition-colors hover:border-accent-cyan/50 hover:text-foreground"
+                      className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1 text-xs sm:px-3.5 sm:py-1.5 sm:text-sm text-foreground/90 transition-colors hover:border-accent-cyan/50 hover:text-foreground"
                     >
                       {skill.name}
                       {skill.learning && (

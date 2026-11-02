@@ -23,7 +23,7 @@ function getReply(q: string): string {
     return `Halo! Saya asisten virtual ${PROFILE.name}. Tanya soal tentang, skill, project, lab, atau kontak.`
 
   if (/(siapa|tentang|about|profil|profile|nama|dhaffa)/.test(s))
-    return `${PROFILE.name} — ${PROFILE.role} (${PROFILE.roleLine}). ${PROFILE.subheadline} Lokasi: ${PROFILE.location}.`
+    return `${PROFILE.name} — ${PROFILE.role}${PROFILE.roleLine ? ` (${PROFILE.roleLine})` : ''}. ${PROFILE.subheadline} Lokasi: ${PROFILE.location}.`
 
   if (/(skill|kemampuan|bisa apa|tech|stack|python|javascript|tools)/.test(s)) {
     const all = SKILL_GROUPS.map((g) => `${g.category}: ${g.items.map((i) => i.name).join(', ')}`).join(' | ')

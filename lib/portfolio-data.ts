@@ -1,14 +1,22 @@
-export const PROFILE = {
+export type Profile = {
+  name: string
+  logo: string
+  role: string
+  roleLine?: string
+  headline?: string
+  tagline?: string
+  subheadline: string
+  location: string
+  availability?: string
+}
+
+export const PROFILE: Profile = {
   name: 'Dhaffa Harfansyah',
   logo: 'Dhaffa.web',
   role: 'Creative Technologist',
-  roleLine: 'AI × CODE × CREATIVE',
-  tagline: 'Creative Technologist · AI · Code · Creative',
-  headline: 'I build digital experiences where AI meets creativity.',
   subheadline:
     'Digital Business student exploring AI, creative technology, visual communication, and digital products through real-world projects.',
   location: 'Padang, Indonesia',
-  availability: 'Tersedia untuk kolaborasi',
 }
 
 export const NAV_LINKS = [
@@ -59,14 +67,13 @@ export const TIMELINE = [
 
 export type SkillGroup = {
   category: string
-  index: string
+  index?: string
   items: { name: string; learning?: boolean }[]
 }
 
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: 'AI & Technology',
-    index: '01',
     items: [
       { name: 'Python' },
       { name: 'Computer Vision', learning: true },
@@ -78,7 +85,6 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: 'Web Development',
-    index: '02',
     items: [
       { name: 'HTML5' },
       { name: 'CSS3' },
@@ -87,12 +93,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: 'Creative & Visual',
-    index: '03',
     items: [{ name: 'Fotografi' }, { name: 'Video / Content Creator' }],
   },
   {
     category: 'Business',
-    index: '04',
     items: [
       { name: 'Digital Business' },
       { name: 'Event Organizer' },
@@ -101,7 +105,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
 ]
 
-export type ProjectCategory = 'AI' | 'CODE' | 'CREATIVE'
+export type ProjectCategory = 'AI' | 'CODE' | 'CREATIVE' | 'IOT' | 'EVENT' | 'PROJECT' | 'RESEARCH'
 
 export type ProjectDetailSection = {
   label: string
@@ -242,7 +246,7 @@ id: 'smart-access-door-pnp',
 title: 'Smart Access Door PNP',
 categories: ['PROJECT', 'CREATIVE'],
 categoryLabel: 'Project · Documentation',
-image: '/image/smart acces door.png',
+image: '/image/smart acces door.jpeg',
 summary:
     'Terlibat dalam dokumentasi, pelaporan, publikasi, dan pengelolaan administrasi proyek Smart Access Door di Politeknik Negeri Padang.',
 tags: ['#Documentation', '#Publication', '#ProjectManagement'],
@@ -354,10 +358,18 @@ export const EXPERIENCE: Experience[] = [
   { logo: '/image/hipmi pt sumbar.jpg', name: ' Bakorda HIPMI PT Sumbar', role: 'External Compartement', description: 'Memimpin divisi digital dalam organisasi kewirausahaan mahasiswa.', period: '2024 - Sekarang' },
 ]
 
-export const CONTACTS = [
-  { label: 'Email', value: 'dhanzymediatech@gmail.com', href: 'mailto:dhanzymediatech@gmail.com' },
-  { label: 'Instagram', value: '@dhaffa.hrfnsyh', href: 'https://www.instagram.com/dhaffa.hrfnsyh' },
-  { label: 'LinkedIn', value: 'Dhaffa Harfansyah', href: 'https://www.linkedin.com/in/dhaffa-harfansyah-a165aa2b4' },
-  { label: 'GitHub', value: 'github.com/dhanzyxone', href: 'https://github.com/dhanzyxone' },
-  { label: 'WhatsApp', value: '+62 851-2620-5130', href: 'https://wa.me/6285126205130' },
+export type ContactItem = {
+  label: string
+  value: string
+  href: string
+  icon?: 'email' | 'instagram' | 'linkedin' | 'github' | 'whatsapp' | 'substack'
+}
+
+export const CONTACTS: ContactItem[] = [
+  { label: 'Email', value: 'dhanzymediatech@gmail.com', href: 'mailto:dhanzymediatech@gmail.com', icon: 'email' },
+  { label: 'Instagram', value: '@dhaffa.hrfnsyh', href: 'https://www.instagram.com/dhaffa.hrfnsyh', icon: 'instagram' },
+  { label: 'LinkedIn', value: 'Dhaffa Harfansyah', href: 'https://www.linkedin.com/in/dhaffa-harfansyah-a165aa2b4', icon: 'linkedin' },
+  { label: 'GitHub', value: 'github.com/dhanzyxone', href: 'https://github.com/dhanzyxone', icon: 'github' },
+  { label: 'WhatsApp', value: '+62 851-2620-5130', href: 'https://wa.me/6285126205130', icon: 'whatsapp' },
+  { label: 'Substack', value: 'Substack', href: 'https://substack.com/@dhaffaharfansyah?utm_source=share&utm_medium=android&r=9e4fa7', icon: 'substack' },
 ]

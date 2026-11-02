@@ -11,10 +11,16 @@ import { Footer } from '@/components/portfolio/footer'
 import { Chatbot } from '@/components/portfolio/chatbot'
 import { AudioPlayer } from '@/components/portfolio/audio-player'
 import { Floating3dObjects } from '@/components/portfolio/floating-3d-objects'
+import { ReadingProgress } from '@/components/portfolio/reading-progress'
+import { BackToTop } from '@/components/portfolio/back-to-top'
+import { CustomCursor } from '@/components/portfolio/custom-cursor'
+import { TerminalMode } from '@/components/portfolio/terminal'
 
 export default function Page() {
   return (
     <div className="grain-overlay relative min-h-svh bg-[#171717]">
+      <ReadingProgress />
+      <CustomCursor />
       <Floating3dObjects />
       <Navbar />
       <main>
@@ -30,6 +36,8 @@ export default function Page() {
       <Footer />
       <Chatbot />
       <AudioPlayer />
+      <BackToTop />
+      <TerminalMode />
     </div>
   )
 }

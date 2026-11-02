@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, PROFILE } from '@/lib/portfolio-data'
 import { cn } from '@/lib/utils'
+import { LiveClock } from './live-clock'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -55,12 +56,15 @@ export function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:border-accent-cyan hover:text-accent-cyan md:inline-block"
-        >
-          Let&apos;s talk
-        </a>
+        <div className="hidden lg:flex items-center gap-6">
+          <LiveClock />
+          <a
+            href="#contact"
+            className="rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:border-accent-cyan hover:text-accent-cyan"
+          >
+            Let&apos;s talk
+          </a>
+        </div>
 
         <button
           type="button"

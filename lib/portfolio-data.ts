@@ -348,7 +348,7 @@ export type Experience = {
 }
 
 export const EXPERIENCE: Experience[] = [
-  { logo: '/image/HAlcom logo.jpeg', name: 'PT HALCOM Inovasi Teknologi', role: 'AI Solutions', description: 'Mengembangkan product AI dan memasarkannya menjadi product nyata dan dikenal semua orang.', period: 'Januari - Juni 2024' },
+  { logo: '/image/Halcom logo.jpeg', name: 'PT HALCOM Inovasi Teknologi', role: 'AI Solutions', description: 'Mengembangkan product AI dan memasarkannya menjadi product nyata dan dikenal semua orang.', period: 'Januari - Juni 2024' },
   { logo: '/image/hydtech logo.png', name: ' CV Hydtech Inovasi Digital', role: 'AI Solutions', description: 'Berkontribusi dalam pengembangan solusi teknologi berbasis IoT dan software.', period: 'Juli - Desember 2024' },
   { logo: '/image/dangau.jpeg', name: 'Dangau Studio', role: 'IT and Media Creative', description: 'Membantu tim produk dalam riset pasar dan pengembangan fitur produk digital.', period: 'Januari - Maret 2025' },
   { logo: '/image/hipmi pt sumbar.jpg', name: ' Bakorda HIPMI PT Sumbar', role: 'External Compartement', description: 'Memimpin divisi digital dalam organisasi kewirausahaan mahasiswa.', period: '2024 - Sekarang' },

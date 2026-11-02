@@ -96,10 +96,10 @@ export function Hero() {
             animate="show"
             className="flex justify-center lg:col-span-5 lg:justify-end"
           >
-            <div className="group relative w-full max-w-xs sm:max-w-sm">
-              <div className="relative mx-auto mt-6 w-40 h-40">
+            <div className="group relative w-full max-w-sm sm:max-w-md flex justify-center">
+              <div className="relative mx-auto mt-6 w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-cyan/30 via-sky-400/20 to-transparent blur-xl animate-pulse" />
-                <div className="relative rounded-full overflow-hidden border-[3px] border-accent-cyan/40 bg-neutral-900 shadow-lg shadow-accent-cyan/10">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-[4px] border-accent-cyan/40 bg-neutral-900 shadow-xl shadow-accent-cyan/15">
                   <img
                     src="/image/iuyn_.png"
                     alt="Dhaffa Harfansyah"
@@ -107,9 +107,9 @@ export function Hero() {
                     loading="eager"
                   />
                 </div>
-                <div className="absolute -inset-[5px] overflow-hidden rounded-full"
+                <div className="absolute -inset-[6px] pointer-events-none overflow-hidden rounded-full opacity-70"
                   style={{
-                    background: 'conic-gradient(from 0deg, transparent 0deg, accent-cyan 60deg, transparent 120deg, accent-cyan 180deg, transparent 240deg, accent-cyan 300deg, transparent 360deg)',
+                    background: 'conic-gradient(from 0deg, transparent 0deg, var(--accent-cyan, #06b6d4) 60deg, transparent 120deg, var(--accent-cyan, #06b6d4) 180deg, transparent 240deg, var(--accent-cyan, #06b6d4) 300deg, transparent 360deg)',
                     animation: 'rotate-glow 3s linear infinite',
                   }}
                 />

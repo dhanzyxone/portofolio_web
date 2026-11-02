@@ -358,6 +358,6 @@ export const CONTACTS = [
   { label: 'Email', value: 'dhanzymediatech@gmail.com', href: 'mailto:dhanzymediatech@gmail.com' },
   { label: 'Instagram', value: '@dhaffa.hrfnsyh', href: 'https://www.instagram.com/dhaffa.hrfnsyh' },
   { label: 'LinkedIn', value: 'Dhaffa Harfansyah', href: 'https://www.linkedin.com/in/dhaffa-harfansyah-a165aa2b4' },
-  { label: 'GitHub', value: 'github.com/dhaffa', href: 'https://github.com/dhaffa' },
+  { label: 'GitHub', value: 'github.com/dhanzyxone', href: 'https://github.com/dhanzyxone' },
   { label: 'WhatsApp', value: '+62 851-2620-5130', href: 'https://wa.me/6285126205130' },
 ]

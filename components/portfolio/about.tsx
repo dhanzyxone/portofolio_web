@@ -10,12 +10,9 @@ import { cn } from '@/lib/utils'
 
 const ABOUT_IMAGES = [
   { src: '/activities/foto1.jpeg', alt: 'Foto 1' },
-  { src: '/activities/portrait-abstract.png', alt: 'Portraits' },
-  { src: '/activities/teamwork.png', alt: 'Teamwork' },
-  { src: '/activities/coding.png', alt: 'Coding' },
-  { src: '/activities/conference.png', alt: 'Conference' },
-  { src: '/activities/daily.png', alt: 'Daily' },
-  { src: '/activities/achievement.png', alt: 'Achievement' },
+  { src: '/activities/robot.jpeg', alt: 'tertarik pada dunia mesin' },
+  { src: '/activities/hand detect.jpeg', alt: 'python' },
+  { src: '/activities/mesin.jpeg', alt: 'Coding' },
 ]
 
 export function About() {

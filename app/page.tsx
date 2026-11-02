@@ -10,10 +10,12 @@ import { CurrentlyBuilding } from '@/components/portfolio/currently-building'
 import { Footer } from '@/components/portfolio/footer'
 import { Chatbot } from '@/components/portfolio/chatbot'
 import { AudioPlayer } from '@/components/portfolio/audio-player'
+import { Floating3dObjects } from '@/components/portfolio/floating-3d-objects'
 
 export default function Page() {
   return (
     <div className="grain-overlay relative min-h-svh bg-[#171717]">
+      <Floating3dObjects />
       <Navbar />
       <main>
         <Hero />

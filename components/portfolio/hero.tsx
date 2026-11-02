@@ -1,9 +1,16 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { CONTACTS, PROFILE } from '@/lib/portfolio-data'
 import { HeroBackground } from './hero-background'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const container = {
   hidden: {},
@@ -98,8 +105,37 @@ function HeroSocialIcon({ icon, className = 'h-4 w-4 sm:h-5 sm:w-5' }: { icon?: 
 }
 
 export function Hero() {
+  const profileRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced || !profileRef.current || !sectionRef.current) return
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    })
+
+    tl.to(profileRef.current, {
+      y: 100,
+      scale: 0.75,
+      opacity: 0,
+      ease: 'none',
+    })
+
+    return () => {
+      tl.kill()
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+    }
+  }, [])
+
   return (
-    <section id="top" className="relative flex min-h-svh flex-col justify-center overflow-hidden pt-28 pb-16">
+    <section ref={sectionRef} id="top" className="relative flex min-h-svh flex-col justify-center overflow-hidden pt-28 pb-16">
       <HeroBackground />
 
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
@@ -186,7 +222,7 @@ export function Hero() {
             animate="show"
             className="flex justify-center lg:col-span-5 lg:justify-end"
           >
-            <div className="relative flex items-center justify-center w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[26rem] lg:h-[26rem]">
+            <div ref={profileRef} className="relative flex items-center justify-center w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[26rem] lg:h-[26rem]">
               {/* Central Photo */}
               <div className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-cyan/30 via-sky-400/20 to-transparent blur-xl animate-pulse" />

@@ -73,34 +73,53 @@ export type SkillGroup = {
 
 export const SKILL_GROUPS: SkillGroup[] = [
   {
-    category: 'AI & Technology',
+    category: 'Videographer',
+    items: [
+      { name: 'Cinematography' },
+      { name: 'Camera Operation' },
+      { name: 'Visual Storytelling' },
+      { name: 'Lighting & Framing' },
+      { name: 'Directing' },
+    ],
+  },
+  {
+    category: 'Video Editing',
+    items: [
+      { name: 'Adobe Premiere Pro' },
+      { name: 'DaVinci Resolve' },
+      { name: 'Color Grading' },
+      { name: 'Sound Design' },
+      { name: 'Pacing & Narrative' },
+    ],
+  },
+  {
+    category: 'Motion Graphics',
+    items: [
+      { name: 'Adobe After Effects' },
+      { name: 'Kinetic Typography' },
+      { name: '2D Animation' },
+      { name: 'Visual Effects (VFX)' },
+      { name: 'Logo Animation' },
+    ],
+  },
+  {
+    category: 'Desain Grafis',
+    items: [
+      { name: 'Figma' },
+      { name: 'Adobe Photoshop' },
+      { name: 'Adobe Illustrator' },
+      { name: 'Visual Identity & Branding' },
+      { name: 'Typography & Layout' },
+    ],
+  },
+  {
+    category: 'AI Developer',
     items: [
       { name: 'Python' },
-      { name: 'Computer Vision', learning: true },
-      { name: 'OpenCV' },
+      { name: 'Computer Vision (OpenCV)' },
       { name: 'Machine Learning', learning: true },
-      { name: 'Data Analysis' },
-      { name: 'Git / GitHub' },
-    ],
-  },
-  {
-    category: 'Web Development',
-    items: [
-      { name: 'HTML5' },
-      { name: 'CSS3' },
-      { name: 'JavaScript', learning: true },
-    ],
-  },
-  {
-    category: 'Creative & Visual',
-    items: [{ name: 'Fotografi' }, { name: 'Video / Content Creator' }],
-  },
-  {
-    category: 'Business',
-    items: [
-      { name: 'Digital Business' },
-      { name: 'Event Organizer' },
-      { name: 'Komunikasi' },
+      { name: 'Large Language Models (LLM)' },
+      { name: 'AI Product Prototyping' },
     ],
   },
 ]
@@ -352,10 +371,12 @@ export type Experience = {
 }
 
 export const EXPERIENCE: Experience[] = [
-  { logo: '/image/Halcom logo.jpeg', name: 'PT HALCOM Inovasi Teknologi', role: 'AI Solutions', description: 'Mengembangkan product AI dan memasarkannya menjadi product nyata dan dikenal semua orang.', period: 'Januari - Juni 2024' },
-  { logo: '/image/hydtech logo.png', name: ' CV Hydtech Inovasi Digital', role: 'AI Solutions', description: 'Berkontribusi dalam pengembangan solusi teknologi berbasis IoT dan software.', period: 'Juli - Desember 2024' },
-  { logo: '/image/dangau.jpeg', name: 'Dangau Studio', role: 'IT and Media Creative', description: 'Membantu tim produk dalam riset pasar dan pengembangan fitur produk digital.', period: 'Januari - Maret 2025' },
-  { logo: '/image/hipmi pt sumbar.jpg', name: ' Bakorda HIPMI PT Sumbar', role: 'External Compartement', description: 'Memimpin divisi digital dalam organisasi kewirausahaan mahasiswa.', period: '2024 - Sekarang' },
+  { logo: '/image/Halcom logo.jpeg', name: 'PT HALCOM Inovasi Teknologi', role: 'Digital Creative and Marketing', description: 'Mengembangkan product AI dan memasarkannya menjadi product nyata dan dikenal semua orang.', period: 'Januari 2026 - Sekarang' },
+     { logo: '/image/bisdig.jpeg', name: 'Tim Humas dan Publikasi Bisnis Digital', role: 'Ketua Tim Humas dan Publikasi', description: 'Membantu dalam pengembangan dan pemasaran produk berbasis teknologi.', period: 'Agustus 2026 - 2027' },
+  { logo: '/image/dangau.jpeg', name: 'Dangau Studio', role: 'Videographer and Content Creator', description: 'Membuat konten visual untuk platform media sosial Dangau Studio.', period: 'Maret - Juni 2026' },
+  { logo: '/image/hipmi pt sumbar.jpg', name: ' Bakorda HIPMI PT Sumbar', role: 'External Compartement', description: 'Memimpin divisi digital dalam organisasi kewirausahaan mahasiswa.', period: 'November 2025 - Sekarang' },
+  { logo: '/image/hydtech logo.png', name: 'Tim Penelitian Hydtech Politeknik Negeri Padang', role: 'Peneliti Junior', description: 'Membantu penelitian dan pengembangan produk berbasis teknologi.', period: 'Desember 2025 - Maret 2026' },
+   { logo: '/image/cv.hydtech2.png', name: 'CV Hydtech Inovasi Digital', role: 'Produk Manager Assistant', description: 'Membantu dalam pengembangan dan pemasaran produk berbasis teknologi.', period: 'Coming Soon' },
 ]
 
 export type ContactItem = {

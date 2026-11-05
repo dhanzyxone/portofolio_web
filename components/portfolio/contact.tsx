@@ -106,7 +106,7 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.15}>
               <a
-                href={CONTACTS[0].href}
+                href={CONTACTS[0]?.href || '#contact'}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent-cyan px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
               >
                 {PROFILE.name.split(' ')[0]} — say hello

@@ -58,7 +58,7 @@ export function TerminalMode() {
       case 'projects':
         output = [
           'Selected Projects:',
-          ...PROJECTS.map((p) => `• ${p.title} (${p.categoryLabel}) - ${p.description}`),
+          ...PROJECTS.map((p) => `• ${p.title} (${p.categoryLabel}) - ${p.summary}`),
         ]
         break
       case 'skills':

@@ -76,23 +76,49 @@ export function Chatbot() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [msgs, open])
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     const clean = text.trim()
     if (!clean) return
     setMsgs((m) => [...m, { role: 'user', text: clean }])
     setInput('')
-    setTimeout(() => {
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: clean }),
+      })
+      const data = await res.json()
+      if (res.ok && data && data.reply) {
+        setMsgs((m) => [...m, { role: 'bot', text: data.reply }])
+      } else {
+        setMsgs((m) => [...m, { role: 'bot', text: getReply(clean) }])
+      }
+    } catch {
       setMsgs((m) => [...m, { role: 'bot', text: getReply(clean) }])
-    }, 350)
+    }
   }
 
   return (
     <>
+      {!open && (
+        <div className="fixed bottom-20 right-6 z-50 animate-bounce rounded-2xl border border-accent-cyan/40 bg-card/95 px-4 py-2.5 shadow-xl backdrop-blur-md">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="font-mono text-xs text-foreground flex items-center gap-2 cursor-pointer"
+          >
+            <span className="h-2 w-2 rounded-full bg-accent-cyan animate-ping" />
+            Tanya AI Assistant Dhaffa 🤖
+          </button>
+        </div>
+      )}
+
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label="Buka chatbot"
-        className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent-cyan text-background shadow-lg transition-transform hover:-translate-y-0.5"
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent-cyan text-background shadow-lg transition-transform hover:-translate-y-0.5 hover:scale-105"
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
       </button>
